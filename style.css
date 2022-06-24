@@ -1,0 +1,87 @@
+:root {
+    --primaryColor-bg: white;
+    --secondaryColor-bg: black;
+    --primaryTextColor: black;
+    --secondaryTextColor: white;
+    --leftWidth: 40%;
+    --mainContentWidth: 80%;
+    --rightContentWidth: 40%
+}
+
+body {
+    width: var(--mainContentWidth);
+    display: flex;
+    padding: 2rem calc((100% - var(--mainContentWidth))/2);
+}
+
+main {
+    display: flex;
+    height: 100vh;
+}
+
+#logo {
+    color: var(--secondaryTextColor)
+}
+
+#left-section {
+    background-image: url("code.avif");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: var(--leftWidth);
+}
+
+#left-section p {
+    color: var(--secondaryTextColor);
+}
+
+#right-section {
+    width: calc(100% - var(--leftWidth));
+}
+
+
+#div1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 30%;
+}
+
+#div1 p {
+    width: clamp(45ch, 50%, 75ch);
+    padding-left: 2rem;
+}
+
+#div2 {
+    height: 40%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    box-shadow: 0 5px 2px grey;
+    padding: 1rem 2rem;
+}
+
+#div2 form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form input {
+    height: 1.5rem;
+    width: 15rem;
+}
+
+#div3 {
+    display: flex;
+    flex-direction: column;
+    height: 30%;
+    padding: 2rem;
+}
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: var(--secondaryTextColor);
+    width: 200px;
+    height: 50px;
+}
