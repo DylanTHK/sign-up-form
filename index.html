@@ -31,30 +31,35 @@
                 <p id="bot-text">Sign up now to get started</p>
             </div>
             <div id="div2">
-                <form action="">
-                    <label for="first-n">First Name</label>
-                    <input type="text" id="first-n" name="first-name">
-                </form>
-                <form action="">
-                    <label for="last-n">Last Name</label>
-                    <input type="text" id="last-n" name="last-name">
-                </form>
-                <form action="">
-                    <label for="email">E-mail</label>
-                    <input type="text" id="email" name="email">
-                </form>
-                <form action="">
-                    <label for="phone">Phone</label>
-                    <input type="text" id="phone" name="phone">
-                </form>
-                <form action="">
-                    <label for="password">Password</label>
-                    <input  class="error" type="password" id="password" name="password">
-                </form>
-                <form action="">
-                    <label for="confirm-password">Confirm Password</label>
-                    <input type="password" id="confirm-password" name="confirm-password">
-                </form>
+                <div id="form-container">
+                    <form action="">
+                        <label for="first-n">First Name</label>
+                        <input type="text" id="first-n" name="first-name">
+                    </form>
+                    <form action="">
+                        <label for="last-n">Last Name</label>
+                        <input type="text" id="last-n" name="last-name">
+                    </form>
+                    <form action="">
+                        <label for="email">E-mail</label>
+                        <input type="text" id="email" name="email">
+                    </form>
+                    <form action="">
+                        <label for="phone">Phone</label>
+                        <input type="text" id="phone" name="phone">
+                    </form>
+                    <form action="">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password">
+                    </form>
+                    <form action="">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" name="confirm-password">
+                    </form>
+                </div>
+                <div id="error-container">
+                    <ul id="error-messages"></ul>
+                </div>
             </div>
             <div id="div3">
                 <button id="create-account">Create Account</button>
