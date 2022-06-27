@@ -135,7 +135,7 @@ form input {
 #passwordError, #passwordConfirmError {
     color: red;
     font-size: .8rem;
-
+    height: 8vh;
 }
 
 /**********************
