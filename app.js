@@ -1,52 +1,53 @@
+let firstName = document.querySelector("#first-n");
+let lastName = document.querySelector("#last-n");
+let email = document.querySelector("#email");
+let phoneNumber = document.querySelector("phone");
 let password = document.querySelector("#password");
+let passwordError = document.querySelector("#passwordError");
 let confirmPassword = document.querySelector("#confirm-password");
+let passwordConfirmError = document.querySelector("#passwordConfirmError");
 let submitButton = document.querySelector("#create-account");
-let errorList = document.querySelector("#error-messages");
 
-// Check if password is valid
+confirmPassword.addEventListener("input", e => {
+    if (password.value !== confirmPassword.value) {
+        passwordConfirmError.textContent = "Passwords do not match";
+    } else passwordConfirmError.textContent = "";
+});
+password.addEventListener("input", () => {validPassword(password.value)});
+
+// Function to check if password is valid
 function validPassword(pw){
-    var lowerCaseLetters = /[a-z]/g;
-    var upperCaseLetters = /[A-Z]/g;
-    var nums = /[0-9]/g;
-    var specialChars = /[!@#\$%\^\&*\)\(+=._-]/g;
+    let lowerCaseLetters = /[a-z]/g;
+    let upperCaseLetters = /[A-Z]/g;
+    let nums = /[0-9]/g;
+    let specialChars = /[!@#\$%\^\&*\)\(+=._-]/g;
+    let errorMessage = "";
 
     if (pw.length < 6) {
-        displayError("Length too short");
-    } else displayError("Length OK!")
-
+        errorMessage = "At least 6 char";
+        errorMessage += "\n";
+    } else passwordError.textContent = "";
     // check for non Capital
-    if (sample.match(lowerCaseLetters)) {
-        displayError("Contains at least 1 lower case letter")
-    } else displayError("Requires at least 1 lower case letter");
-
+    if (!pw.match(lowerCaseLetters)) {
+        errorMessage += "Missing 1 lowercase";
+        errorMessage += "\n";
+    }
     // check for Capital
-    if (sample.match(upperCaseLetters)) {
-        displayError("Contains at least 1 upper case letter")
-    } else displayError("Requires at least 1 upper case letter");
-
+    if (!pw.match(upperCaseLetters)) {
+        errorMessage += "Missing 1 uppercase";
+        errorMessage += "\n";
+    }
     // check for num
-    if (sample.match(nums)) {
-        displayError("Contain at least 1 number")
-    } else displayError("Requires at least 1 number");
-
+    if (!pw.match(nums)) {
+        errorMessage += "Missing 1 number ";
+        errorMessage += "\n";
+    }
     // check for special char
-    if (sample.match(specialChars)) {
-        displayError("Contains at least 1 special character")
-    } else displayError("Requires at least 1 special character");
+    if (!pw.match(specialChars)) {
+        errorMessage += "Missing 1 special character ";
+        errorMessage += "\n";
+    }
+    passwordError.setAttribute('style', 'white-space: pre;');
+    passwordError.textContent = errorMessage;
 }
 
-// Check if values are the same
-
-
-// displays error message
-function displayError(message) {
-    var errorMessage = document.createElement("li");
-    errorMessage.appendChild(document.createTextNode(message));
-    errorList.appendChild(errorMessage);
-}
-
-sample = "Hello1";
-
-
-
-console.log(validPassword(sample));
